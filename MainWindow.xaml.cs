@@ -27,17 +27,25 @@ namespace FuelCalculator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            const double density = 0.76; 
-            double l = Convert.ToDouble(length.Text);
-            double av = Convert.ToDouble(averageExp.Text);
+            try
+            {
+                const double density = 0.76;
+                double l = Convert.ToDouble(length.Text);
+                double av = Convert.ToDouble(averageExp.Text);
 
-            double resL = l * av/100;
-            double resKg = resL*density;
+                double resL = l * av / 100;
+                double resKg = resL * density;
 
-            resultKg.Text = resKg.ToString();
-            resultL.Text = resL.ToString();
+                resultKg.Text = resKg.ToString();
+                resultL.Text = resL.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
 
-            
+
+
         }
     }
 }

@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="300">
     <Grid>
-        <GroupBox Header="Расчет веса топлива" Margin="5" BorderThickness="4" BorderBrush="blue">
+        <GroupBox Header="Расчет веса топлива" Margin="5" BorderThickness="5" BorderBrush="blue">
             <StackPanel>
                 <Label Content="Введите расстояние до конечного пункта"/>
 
                 <TextBox x:Name="length" Margin="5"/>
                 <Label Content="Введите средний расход топлива на 100 км"/>
                 <TextBox x:Name="averageExp" Margin="5"/>
-                <Button Content="Расчитать" Margin="10" Click="Button_Click"/>
+                <Button Content="Расчитать" Margin="5" Click="Button_Click"/>
                 <Label Content="Расчетное количество топлива, л"/>
                 <TextBox x:Name="resultL" Margin="5"/>
                 <Label Content="Расчетное количество топлива, кг"/>
