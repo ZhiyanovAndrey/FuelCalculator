@@ -18,8 +18,9 @@
             <sys:String>Екатеринбург-Токио</sys:String>
         </Collection:ArrayList>
     </Window.Resources>
-  
-    
+
+    <!--Для добавления новых участков добавил раздел ресурсы-->
+
     <StackPanel>
 
         <Label Content="Введите расстояние до конечного пункта"/>
@@ -28,13 +29,13 @@
                   ItemsSource="{StaticResource collectionDistanses}"/>
 
 
-        <TextBox x:Name="TB_distance" Margin="5" Text="{Binding ElementName=ComboBox, Path=Text}"/>
+        <TextBox x:Name="TB_distance" Margin="5" />
         <Label Content="Введите средний расход топлива на 100 км"/>
         <TextBox x:Name="averageExp" Margin="5"/>
         <Button Content="Расчитать" Margin="5" Click="Button_Click"/>
         <Label Content="Расчетное количество топлива, л"/>
         <TextBox x:Name="resultL" Margin="5"/>
-        <Label Content="Расчетное количество топлива, кг"/>
+        <Label Content="Расчетное количество веса топлива, кг"/>
         <TextBox x:Name="resultKg" Margin="5"/>
 
     </StackPanel>

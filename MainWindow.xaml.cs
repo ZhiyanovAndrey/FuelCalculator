@@ -32,23 +32,9 @@ namespace FuelCalculator
             try
             {
 
-            switch (TB_distance.Text)
-                {
-                    case "Москва-Екатеринбург":
-                        distance = 1801;
-                        break;
-                    case "Екатеринбург-Владивосток":
-                        distance = 7489;
-                        break;
-                    case "Екатеринбург-Токио":
-                        distance = 9164;
-                        break;
-                    default:
-                        break;
 
-                }
                 const double density = 0.76;
-                //double distanceString = Convert.ToDouble(TB_distance.Text);
+                double distance = Convert.ToDouble(TB_distance.Text);
                 double av = Convert.ToDouble(averageExp.Text);
 
                 double resL = distance * av / 100;
@@ -71,6 +57,25 @@ namespace FuelCalculator
             string distanceString = (sender as ComboBox).SelectedItem.ToString();
 
 
+            if (distanceString != null)
+            {
+                switch (distanceString)
+                {
+                    case "Москва-Екатеринбург":
+                        distance = 1801;
+                        break;
+                    case "Екатеринбург-Владивосток":
+                        distance = 7489;
+                        break;
+                    case "Екатеринбург-Токио":
+                        distance = 9164;
+                        break;
+                    default:
+                        break;
+
+                }
+                TB_distance.Text=distance.ToString();      
+            }
         }
     }
 }
