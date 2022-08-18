@@ -4,24 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FuelCalculator"
+        xmlns:Collection="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="300">
-    <Grid>
-        <GroupBox Header="Расчет веса топлива" Margin="5" BorderThickness="5" BorderBrush="blue">
-            <StackPanel>
-                <Label Content="Введите расстояние до конечного пункта"/>
+        Title="Расчет веса топлива" Height="450" Width="300" BorderThickness="5" BorderBrush="blue">
 
-                <TextBox x:Name="length" Margin="5"/>
-                <Label Content="Введите средний расход топлива на 100 км"/>
-                <TextBox x:Name="averageExp" Margin="5"/>
-                <Button Content="Расчитать" Margin="5" Click="Button_Click"/>
-                <Label Content="Расчетное количество топлива, л"/>
-                <TextBox x:Name="resultL" Margin="5"/>
-                <Label Content="Расчетное количество топлива, кг"/>
-                <TextBox x:Name="resultKg" Margin="5"/>
+    <!--добавил пространство имен System.Collections для использования ArrayList и System-->
 
-            </StackPanel>
-        </GroupBox>
-        
-    </Grid>
+    <Window.Resources>
+        <Collection:ArrayList x:Key="collectionDistanses">
+            <sys:String>Москва-Екатеринбург</sys:String>
+            <sys:String>Екатеринбург-Владивосток</sys:String>
+            <sys:String>Екатеринбург-Токио</sys:String>
+        </Collection:ArrayList>
+    </Window.Resources>
+  
+    
+    <StackPanel>
+
+        <Label Content="Введите расстояние до конечного пункта"/>
+
+        <ComboBox x:Name="ComboBox" Margin="5" Padding="5" SelectionChanged="ComboBox_SelectionChanged"
+                  ItemsSource="{StaticResource collectionDistanses}"/>
+
+
+        <TextBox x:Name="TB_distance" Margin="5" Text="{Binding ElementName=ComboBox, Path=Text}"/>
+        <Label Content="Введите средний расход топлива на 100 км"/>
+        <TextBox x:Name="averageExp" Margin="5"/>
+        <Button Content="Расчитать" Margin="5" Click="Button_Click"/>
+        <Label Content="Расчетное количество топлива, л"/>
+        <TextBox x:Name="resultL" Margin="5"/>
+        <Label Content="Расчетное количество топлива, кг"/>
+        <TextBox x:Name="resultKg" Margin="5"/>
+
+    </StackPanel>
+
 </Window>

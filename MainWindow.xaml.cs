@@ -25,15 +25,33 @@ namespace FuelCalculator
             InitializeComponent();
         }
 
+        public double distance=0;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+
+            switch (TB_distance.Text)
+                {
+                    case "Москва-Екатеринбург":
+                        distance = 1801;
+                        break;
+                    case "Екатеринбург-Владивосток":
+                        distance = 7489;
+                        break;
+                    case "Екатеринбург-Токио":
+                        distance = 9164;
+                        break;
+                    default:
+                        break;
+
+                }
                 const double density = 0.76;
-                double l = Convert.ToDouble(length.Text);
+                //double distanceString = Convert.ToDouble(TB_distance.Text);
                 double av = Convert.ToDouble(averageExp.Text);
 
-                double resL = l * av / 100;
+                double resL = distance * av / 100;
                 double resKg = resL * density;
 
                 resultKg.Text = resKg.ToString();
@@ -44,6 +62,13 @@ namespace FuelCalculator
                 MessageBox.Show(ex.Message);    
             }
 
+
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string distanceString = (sender as ComboBox).SelectedItem.ToString();
 
 
         }
