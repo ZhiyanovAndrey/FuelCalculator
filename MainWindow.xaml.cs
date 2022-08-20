@@ -27,6 +27,11 @@ namespace FuelCalculator
 
         public double distance=0;
 
+      /// <summary>
+      /// Расчет расхода топлива по расстоянию
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -51,7 +56,11 @@ namespace FuelCalculator
 
 
         }
-
+        /// <summary>
+        /// Распознает текст в ComboBox и заменяет его значением расстояния
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string distanceString = (sender as ComboBox).SelectedItem.ToString();

@@ -23,11 +23,11 @@
 
     <StackPanel>
 
-        <Label Content="Введите расстояние до конечного пункта"/>
+        <Label Content="Выберите маршрут"/>
 
         <ComboBox x:Name="ComboBox" Margin="5" Padding="5" SelectionChanged="ComboBox_SelectionChanged"
                   ItemsSource="{StaticResource collectionDistanses}"/>
-
+        <Label Content="или введите необходимое расстояние в ручную"/>
 
         <TextBox x:Name="TB_distance" Margin="5" />
         <Label Content="Введите средний расход топлива на 100 км"/>
