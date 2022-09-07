@@ -12,21 +12,68 @@
     <!--добавил пространство имен System.Collections для использования ArrayList и System-->
 
     <Window.Resources>
-        <Collection:ArrayList x:Key="collectionDistanses">
-            <sys:String>Москва-Екатеринбург</sys:String>
-            <sys:String>Екатеринбург-Владивосток</sys:String>
-            <sys:String>Екатеринбург-Токио</sys:String>
+        <Collection:ArrayList x:Key="collectionDistansesO">
+            <sys:String>Вурнары</sys:String>
+            <sys:String>Пинер</sys:String>
+            <sys:String>Мыслец</sys:String>
+            <sys:String>Шумерля через понтонный мост</sys:String>
+            <sys:String>Шумерля через Порецкое</sys:String>
+            <sys:String>Шумерля через Лукоянов</sys:String>
+            <sys:String>Княжиха</sys:String>
+            <sys:String>Кумашка</sys:String>
+            <sys:String>Пильна</sys:String>
+            <sys:String>Сергач</sys:String>
+            <sys:String>Тарталей</sys:String>
+            <sys:String>Камкино</sys:String>
+            <sys:String>Каменище</sys:String>
+            <sys:String>Смагино</sys:String>
+            <sys:String>Кемары</sys:String>
+            <sys:String>Перевозская</sys:String>
+            <sys:String>Ревезень</sys:String>
+            <sys:String>Вадок</sys:String>
+            <sys:String>Бобыльская</sys:String>
+            <sys:String>Трактовый</sys:String>
+            <sys:String>р.д.408</sys:String>
         </Collection:ArrayList>
+        <Collection:ArrayList x:Key="collectionDistansesD">
+            <sys:String>Красный Узел</sys:String>
+            <sys:String>Атьма</sys:String>
+            <sys:String>Оброчное</sys:String>
+            <sys:String>Кемля</sys:String>
+            <sys:String>Кендя</sys:String>
+            <sys:String>Ужовка</sys:String>
+            <sys:String>Арзинка</sys:String>
+            <sys:String>Николай Дар</sys:String>
+            <sys:String>Веселей</sys:String>
+            <sys:String>Лукоянов</sys:String>
+            <sys:String>Поя</sys:String>
+            <sys:String>Берещино</sys:String>
+            <sys:String>Шатки</sys:String>
+            <sys:String>Пешелань</sys:String>
+            <sys:String>Арзамас1</sys:String>
+        </Collection:ArrayList>
+
     </Window.Resources>
 
     <!--Для добавления новых участков добавил раздел ресурсы-->
 
     <StackPanel>
 
-        <Label Content="Выберите маршрут"/>
+        <Label Content="Выберите маршрут от ЭЧ-12:"/>
 
-        <ComboBox x:Name="ComboBox" Margin="5" Padding="5" SelectionChanged="ComboBox_SelectionChanged"
-                  ItemsSource="{StaticResource collectionDistanses}"/>
+        <UniformGrid Rows="2" Columns="2">
+
+            <Label Content="Основной ход" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="Деревянный ход" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
+          <ComboBox x:Name="ComboBoxO" Margin="5" Padding="5" SelectionChanged="ComboBox_SelectionChanged"
+                  ItemsSource="{StaticResource collectionDistansesO}" HorizontalAlignment="Stretch"/>
+         
+            <ComboBox x:Name="ComboBoxD" DockPanel.Dock="Bottom" Margin="5" Padding="5" SelectionChanged="ComboBox_SelectionChanged"
+                  ItemsSource="{StaticResource collectionDistansesD}"/>
+        </UniformGrid>
+
+
         <Label Content="или введите необходимое расстояние в ручную"/>
 
         <TextBox x:Name="TB_distance" Margin="5" />
