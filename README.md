@@ -1,6 +1,6 @@
 **Калькулятор топплива**  
 
-  
+  ![Image alt](https://github.com/{ZhiyanovAndrey}/{repository}/raw/{branch}/{path}/image.png)
 ![Иллюстрация к проекту](https://disk.yandex.ru/i/YYBSUnbZvrS05Q)
 
 Стек Технологий:
